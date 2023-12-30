@@ -1,0 +1,131 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: $backBlocks;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__left {
+        display: flex;
+        align-items: center;
+        gap: 2.56rem;
+        padding-left: 6px;
+    }
+    
+    .header__right {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding-right: 6px;
+    }
+}
+
+.top-head {
+    height: 9.25rem;
+    background-color: #F8F3F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.top-head__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: $colorSelectSite;
+    padding-left: 6px;
+}
+
+.breadcrumbs {
+    padding-right: 6px;
+
+    .breadcrumbs__link {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        color: #636363;
+    }
+
+    .breadcrumbs__link__site {
+        font-weight: 700;
+        color: $colorSelectSite;
+    }
+}
+
+
+.product-box {
+    @include centerFlex();
+    gap: $gapGrid;
+    margin-bottom: 48px;
+}
+
+.product {
+    width: $thirdSite;
+    max-width: 360px;
+    background-color: #F8F8F8;
+
+    &-content {
+        padding: 24px 1rem 20px;
+    }
+
+    &-img {
+        width: 100%;
+    }
+
+    &-name {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $colorText;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    &-dsc {
+        color: #5D5D5D;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 18px;
+    }
+
+    &-price {
+        color: $colorSelectSite;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
