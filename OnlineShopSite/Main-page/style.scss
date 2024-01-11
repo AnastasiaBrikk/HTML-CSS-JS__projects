@@ -1,4 +1,6 @@
 @import 'adaptive';
+@import 'vars';
+
 
 $justify-content: center;
 $colorStyleSite: #F16D7F;
@@ -15,138 +17,148 @@ $colorStyleSite: #F16D7F;
     box-sizing: border-box;
 }
 
-.body {
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
     font-family: 'Lato', sans-serif;
-    width: 100vw;
-    margin: 0 auto;
 }
 
 .center {
-    max-width: 1140px;
-    width: 71.25vw;
-    margin: 0 auto;
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box__content {
+    overflow-x: hidden;
 }
 
 .header {
-    background-color: #222;
-    min-height: 75px;
-}
-
-.logos {
-    height: 75px;
+    background-color: $backBlocks;
+    padding-top: 20px;
+    padding-bottom: 20px;
     @include flex(space-between);
+    position: relative;
 
-
-    .logo-main {
-        padding: 0 35px 0 1rem;
+    .header__left {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        padding-left: 6px;
     }
 
-    .logo-right {
-        @include flex(space-around);
+    .header__right {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding-right: 6px;
     }
 }
 
-.header-button {
-    height: 100%;
-}
-
-.cart {
+.header-right__cart {
     position: relative;
 }
 
-.cart-icon::after {
+.cart::after {
+    position: absolute;
     content: "5";
     color: #FFF;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background-color: $colorStyleSite;
+    background-color: $colorSelectSite;
     width: 19px;
     height: 19px;
     @include flex(center);
-    position: absolute;
     border-radius: 50%;
-    top: -10px;
-    right: 10px;
+    top: -5px;
+    left: 19px;
 }
 
-.fa {
-    color: #E8E8E8;
-    padding: 0 15px;
+#m-burger {
+    position: absolute;
+    visibility: hidden;
+    left: -99999px;
+
+    &:checked~.nav {
+        right: 0;
+    }
 }
 
+.burger-menu__icon {
+    cursor: pointer;
+}
 
-.menu {
-    background-color: #fff;
-    filter: drop-shadow(6px 4px 35px rgba(0, 0, 0, 0.21));
-    height: 634px;
-    width: 14.5vw;
-    padding: 32px;
-    /* position: absolute; */
-    /* display: none; */
+.nav {
+    position: absolute;
+    width: $widthBurgerMenu;
+    background: #FFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    padding: 37px 34px 0;
+    top: 81.5px;
+    right: -$widthBurgerMenu;
+    transition: right .3s;
+    z-index: 5;
 
-    &-block {
-        width: 31.25vw;
-        height: max-content;
-        position: absolute;
-        top: 0%;
-        right: 0%;
-        padding-left: 16.7vw;
-        padding-top: 75px;
-        display: none;
-    }
-
-    &-open:hover &-block {
-        display: block;
-    }
-
-    &-box {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    &-title {
-        color: #000;
+    &__head {
+        color: $colorText;
         font-size: 14px;
-        font-family: 'Lato', sans-serif;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         margin-bottom: 24px;
     }
 
-    &-subtitle {
-        color: $colorStyleSite;
-        font-family: 'Lato', sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin-bottom: 12px;
-    }
+    &__list {
+        &__heading {
+            color: $colorSelectSite;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
 
-    &-contents {
-        display: flex;
-        flex-direction: column;
-        gap: 11px;
-        padding-left: 21.5px;
-    }
+        &__ul {
+            margin-top: 12px;
+            margin-bottom: 20px;
+            gap: 11px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 21px;
+        }
 
-    &-content {
-        color: #6F6E6E;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-    }
+        &__ul a {
+            color: #6F6E6E;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
 
-    &-content:hover {
-        font-weight: bold;
+        &__ul a:hover {
+            color: $colorSelectSite;
+        }
     }
 }
+
 
 .top {
     background-color: #F1E4E6;
@@ -359,12 +371,14 @@ $colorStyleSite: #F16D7F;
     border: 1px solid #FF6A6A;
     background-color: white;
     padding: 15px 39px;
-    margin-bottom: 60px;
     color: #F26376;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
+    margin-bottom: 60px;
+    margin-left: 41%;
 }
 
 .button-browse:hover {
@@ -373,8 +387,7 @@ $colorStyleSite: #F16D7F;
 }
 
 .about-bottom {
-    width: 100%;
-    max-width: 1600px;
+    width: 100vw;
     background-color: #222224;
 }
 
@@ -410,9 +423,8 @@ $colorStyleSite: #F16D7F;
 }
 
 .subscribe {
-    width: 100%;
+    width: 100vw;
     height: 448px;
-    max-width: 1600px;
     background-image: url(/img/sub-bg-img.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -430,9 +442,11 @@ $colorStyleSite: #F16D7F;
 
 .sub-box {
     position: absolute;
-    left: 15%;
     z-index: 2;
-    @include flex(space-between);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     .sub-left {
         @include flex(center);
@@ -451,6 +465,11 @@ $colorStyleSite: #F16D7F;
         font-weight: 400;
         line-height: normal;
         margin-bottom: 130px;
+    }
+    
+    .sub-right {
+        min-width: 32.2%;
+        margin-right: 97px;
     }
 
     .sub-right-title {
@@ -501,6 +520,7 @@ $colorStyleSite: #F16D7F;
     background-color: $colorStyleSite;
     border-radius: 0 25px 25px 0;
     border: none;
+    cursor: pointer;
 }
 
 .button-sub:hover {
@@ -516,6 +536,7 @@ $colorStyleSite: #F16D7F;
 
     &-box {
         @include flex(space-between);
+        width: 100%;
     }
 
     &-text {
@@ -540,7 +561,7 @@ $colorStyleSite: #F16D7F;
     }
 
     &-nav-icon:hover {
-        background-color: $colorStyleSite;
+        background-color: $colorSelectSite;
     }
 
     &-nav-icon:hover path {
