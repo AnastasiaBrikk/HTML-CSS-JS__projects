@@ -57,23 +57,23 @@ a {
     @include flex(space-between);
     position: relative;
 
-    .header__left {
+    &__left {
         display: flex;
         align-items: center;
         gap: 35px;
         padding-left: 6px;
     }
 
-    .header__right {
+    &__right {
         display: flex;
         align-items: center;
         gap: 2.5rem;
         padding-right: 6px;
     }
-}
 
-.header-right__cart {
-    position: relative;
+    &__cart {
+        position: relative;
+    }
 }
 
 .cart::after {
@@ -430,32 +430,32 @@ a {
     background-size: cover;
     background-position: center;
     position: relative;
-}
 
-.sub-background {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    background: rgba(244, 244, 244, 0.70);
-}
+    &__background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background: rgba(244, 244, 244, 0.70);
+    }
 
-.sub-box {
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    &__box {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-    .sub-left {
+    &__left {
         @include flex(center);
         flex-direction: column;
         margin-top: 97px;
     }
 
 
-    .sub-left-text {
+    &__text {
         color: #222224;
         max-width: 360px;
         padding-top: 30px;
@@ -466,13 +466,13 @@ a {
         line-height: normal;
         margin-bottom: 130px;
     }
-    
-    .sub-right {
+
+    &__right {
         min-width: 32.2%;
         margin-right: 97px;
     }
 
-    .sub-right-title {
+    &__title {
         color: #222224;
         font-size: 18px;
         font-style: normal;
@@ -480,14 +480,14 @@ a {
         line-height: 167.2%;
         text-align: center;
         margin-bottom: 2rem;
-    }
 
-    .sub-title-top {
-        color: #222224;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 167.2%;
+        &_top {
+            color: #222224;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 167.2%;
+        }
     }
 }
 
@@ -534,12 +534,12 @@ a {
     align-items: center;
 
 
-    &-box {
+    &__box {
         @include flex(space-between);
         width: 100%;
     }
 
-    &-text {
+    &__text {
         color: #FBFBFB;
         font-size: 16px;
         font-style: normal;
@@ -547,24 +547,24 @@ a {
         line-height: normal;
     }
 
-    &-nav {
+    &__nav {
         display: flex;
         gap: 0.7rem;
         align-items: center;
     }
 
-    &-nav-icon {
+    &__icon {
         width: 32px;
         height: 32px;
         background-color: #fff;
         @include flex(center);
     }
 
-    &-nav-icon:hover {
+    &__icon:hover {
         background-color: $colorSelectSite;
     }
 
-    &-nav-icon:hover path {
+    &__icon:hover path {
         fill: #FFFFFF;
     }
 }

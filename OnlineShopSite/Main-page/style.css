@@ -248,20 +248,19 @@ a {
   justify-content: space-between;
   position: relative;
 }
-.header .header__left {
+.header__left {
   display: flex;
   align-items: center;
   gap: 35px;
   padding-left: 6px;
 }
-.header .header__right {
+.header__right {
   display: flex;
   align-items: center;
   gap: 2.5rem;
   padding-right: 6px;
 }
-
-.header-right__cart {
+.header__cart {
   position: relative;
 }
 
@@ -605,16 +604,14 @@ a {
   background-position: center;
   position: relative;
 }
-
-.sub-background {
+.subscribe__background {
   height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;
   background: rgba(244, 244, 244, 0.7);
 }
-
-.sub-box {
+.subscribe__box {
   position: absolute;
   z-index: 2;
   display: flex;
@@ -622,14 +619,14 @@ a {
   justify-content: space-between;
   width: 100%;
 }
-.sub-box .sub-left {
+.subscribe__left {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 97px;
 }
-.sub-box .sub-left-text {
+.subscribe__text {
   color: #222224;
   max-width: 360px;
   padding-top: 30px;
@@ -640,11 +637,11 @@ a {
   line-height: normal;
   margin-bottom: 130px;
 }
-.sub-box .sub-right {
+.subscribe__right {
   min-width: 32.2%;
   margin-right: 97px;
 }
-.sub-box .sub-right-title {
+.subscribe__title {
   color: #222224;
   font-size: 18px;
   font-style: normal;
@@ -653,7 +650,7 @@ a {
   text-align: center;
   margin-bottom: 2rem;
 }
-.sub-box .sub-title-top {
+.subscribe__title_top {
   color: #222224;
   font-size: 24px;
   font-style: normal;
@@ -701,25 +698,25 @@ a {
   display: flex;
   align-items: center;
 }
-.footer-box {
+.footer__box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.footer-text {
+.footer__text {
   color: #FBFBFB;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.footer-nav {
+.footer__nav {
   display: flex;
   gap: 0.7rem;
   align-items: center;
 }
-.footer-nav-icon {
+.footer__icon {
   width: 32px;
   height: 32px;
   background-color: #fff;
@@ -727,9 +724,9 @@ a {
   align-items: center;
   justify-content: center;
 }
-.footer-nav-icon:hover {
+.footer__icon:hover {
   background-color: #F16D7F;
 }
-.footer-nav-icon:hover path {
+.footer__icon:hover path {
   fill: #FFFFFF;
 }/*# sourceMappingURL=style.css.map */

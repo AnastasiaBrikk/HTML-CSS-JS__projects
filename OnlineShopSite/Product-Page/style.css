@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
 html {
   font-size: 16px;
 }
@@ -17,8 +25,16 @@ body {
   padding-right: calc(50% - 570px);
 }
 
+.box__content {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 .header {
@@ -29,11 +45,12 @@ a {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
 }
 .header .header__left {
   display: flex;
   align-items: center;
-  gap: 2.56rem;
+  gap: 35px;
   padding-left: 6px;
 }
 .header .header__right {
@@ -41,6 +58,88 @@ a {
   align-items: center;
   gap: 2.5rem;
   padding-right: 6px;
+}
+
+.header-right__cart {
+  position: relative;
+}
+
+.cart::after {
+  position: absolute;
+  content: "5";
+  color: #FFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #F16D7F;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  top: -5px;
+  left: 19px;
+}
+
+#m-burger {
+  position: absolute;
+  visibility: hidden;
+  left: -99999px;
+}
+#m-burger:checked ~ .nav {
+  right: 0;
+}
+
+.burger-menu__icon {
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  width: 232px;
+  background: #FFF;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  padding: 37px 34px 0;
+  top: 81.5px;
+  right: -232px;
+  transition: right 0.3s;
+  z-index: 5;
+}
+.nav__head {
+  color: black;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.nav__list__heading {
+  color: #F16D7F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.nav__list__ul {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  gap: 11px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 21px;
+}
+.nav__list__ul a {
+  color: #6F6E6E;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.nav__list__ul a:hover {
+  color: #F16D7F;
 }
 
 .top-head {
@@ -62,15 +161,22 @@ a {
 
 .breadcrumbs {
   padding-right: 6px;
+  display: flex;
 }
-.breadcrumbs .breadcrumbs__link {
+.breadcrumbs__link {
+  color: #636363;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  color: #636363;
 }
-.breadcrumbs .breadcrumbs__link__site {
+.breadcrumbs__li:not(:last-child)::after {
+  content: "/";
+  padding: 0 5px;
+  color: #636363;
+  font-weight: 300;
+}
+.breadcrumbs .breadcrumbs__li:last-child a {
   font-weight: 700;
   color: #F16D7F;
 }
@@ -211,9 +317,10 @@ a {
   border: 1px solid #FF6A6A;
   padding: 15px 57px 14px 73px;
   position: relative;
+  cursor: pointer;
 }
 .current-product-dsc-button::before {
-  content: url(/Product-Page/cart-style.svg);
+  content: url(cart-style.svg);
   position: absolute;
   left: 24px;
   top: 14px;
@@ -240,8 +347,20 @@ a {
 .product-content {
   padding: 24px 1rem 20px;
 }
-.product-img {
+.product .img {
+  background-color: #3A3838;
+  height: 420px;
+  position: relative;
+}
+.product .product-img {
   width: 100%;
+  height: auto;
+}
+.product .img:hover .product-img {
+  opacity: 0.14;
+}
+.product .img:hover .product-button {
+  visibility: visible;
 }
 .product-name {
   font-size: 13px;
@@ -251,6 +370,7 @@ a {
   color: black;
   display: block;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 .product-dsc {
   color: #5D5D5D;
@@ -268,6 +388,29 @@ a {
   font-weight: 400;
   line-height: normal;
 }
+.product-button {
+  top: 45%;
+  left: 32%;
+  width: 139px;
+  height: 44px;
+  border: 1px solid white;
+  display: flex;
+  background: none;
+  align-items: center;
+  gap: 11px;
+  justify-content: center;
+  visibility: hidden;
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+}
+.product-button-text {
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 .products {
   margin-bottom: 128px;
@@ -277,7 +420,7 @@ a {
   width: 100%;
   height: 448px;
   max-width: 1600px;
-  background-image: url(/Main-page/img/sub-bg-img.png);
+  background-image: url(img/sub-bg-img.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -365,6 +508,7 @@ a {
   background-color: #F16D7F;
   border-radius: 0 25px 25px 0;
   border: none;
+  cursor: pointer;
 }
 
 .button-sub:hover {

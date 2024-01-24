@@ -162,15 +162,23 @@ a {
 
 .breadcrumbs {
   padding-right: 6px;
+  list-style-type: none;
+  display: flex;
 }
-.breadcrumbs .breadcrumbs__link {
+.breadcrumbs__link {
+  color: #636363;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  color: #636363;
 }
-.breadcrumbs .breadcrumbs__link__site {
+.breadcrumbs__li:not(:last-child)::after {
+  content: "/";
+  padding: 0 5px;
+  color: #636363;
+  font-weight: 300;
+}
+.breadcrumbs .breadcrumbs__li:last-child a {
   font-weight: 700;
   color: #F16D7F;
 }
@@ -338,8 +346,20 @@ a {
 .product-content {
   padding: 24px 1rem 20px;
 }
-.product-img {
+.product .img {
+  background-color: #3A3838;
+  height: 420px;
+  position: relative;
+}
+.product .product-img {
   width: 100%;
+  height: auto;
+}
+.product .img:hover .product-img {
+  opacity: 0.14;
+}
+.product .img:hover .product-button {
+  visibility: visible;
 }
 .product-name {
   font-size: 13px;
@@ -349,6 +369,7 @@ a {
   color: black;
   display: block;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 .product-dsc {
   color: #5D5D5D;
@@ -357,10 +378,34 @@ a {
   font-weight: 300;
   line-height: normal;
   margin-bottom: 18px;
+  width: 314.743px;
 }
 .product-price {
   color: #F16D7F;
   font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product-button {
+  top: 45%;
+  left: 32%;
+  width: 139px;
+  height: 44px;
+  border: 1px solid white;
+  display: flex;
+  background: none;
+  align-items: center;
+  gap: 11px;
+  justify-content: center;
+  visibility: hidden;
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+}
+.product-button-text {
+  color: white;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
