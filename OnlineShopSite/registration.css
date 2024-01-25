@@ -394,4 +394,72 @@ a {
 }
 .footer__icon:hover path {
   fill: #FFFFFF;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .registration__regist {
+    width: 46.875vw;
+  }
+  .registration__loyalty {
+    width: 46.093vw;
+  }
+  .registration {
+    margin-top: 40px;
+  }
+  .registration__head, .registration__text, .registration__li {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .registration__title, .registration__sex, .registration__bottom-text {
+    font-weight: 400;
+  }
+  .registration__button {
+    padding: 17px 29px;
+  }
+  .subscribe {
+    min-height: 600px;
+    background-position-x: 25%;
+  }
+  .subscribe__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .subscribe__left {
+    margin-top: 64px;
+    max-width: 360px;
+  }
+  .subscribe__right {
+    margin-right: 0;
+    margin-bottom: 140px;
+  }
+  .subscribe__title {
+    line-height: 162%;
+    margin-bottom: 27px;
+  }
+  .subscribe__title_top {
+    line-height: 162%;
+  }
+  .subscribe__text {
+    margin-bottom: 60px;
+  }
+  .header__left {
+    padding-left: 32px;
+  }
+  .header__right {
+    padding-right: 32px;
+  }
+  .footer__text {
+    padding-left: 16px;
+  }
+  .footer__nav {
+    padding-right: 16px;
+  }
 }/*# sourceMappingURL=registration.css.map */
