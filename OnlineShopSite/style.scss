@@ -1,15 +1,5 @@
-@import 'main-adaptive';
 @import 'vars';
-
-
-$justify-content: center;
-$colorSelectSite: #F16D7F;
-
-@mixin flex($justify-content) {
-    display: flex;
-    align-items: center;
-    justify-content: $justify-content;
-}
+@import 'mixins';
 
 * {
     margin: 0;
@@ -40,6 +30,11 @@ body {
 
 li {
     list-style-type: none;
+}
+
+
+.padding {
+    padding: 0 16px;
 }
 
 a {
@@ -162,7 +157,7 @@ a {
 .top {
     background-color: #F1E4E6;
     display: flex;
-    justify-content: flex-start;
+    gap: 0;
     margin-bottom: 65px;
 
     .img-top {
@@ -321,7 +316,6 @@ a {
     background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3%;
 
     &-name {
         color: #000;
@@ -350,9 +344,9 @@ a {
     }
 
     &-blocks {
-        @include flex(space-between);
-        max-width: 71.25vw;
+        @include flex(center);
         flex-wrap: wrap;
+        gap: 30px;
         align-items: normal;
         margin: 48px auto;
     }
@@ -573,5 +567,117 @@ a {
 
     &__icon:hover path {
         fill: #FFFFFF;
+    }
+}
+
+@media(min-width: 1600px) {
+    .img-top {
+        margin-left: calc(50% - 800px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .top {
+        margin-bottom: 20px;
+    }
+
+    .offer {
+        gap: 20px;
+    }
+
+    .items {
+        gap: 19px;
+    }
+
+    .product-title {
+        margin-top: 155px;
+        margin-bottom: 3px;
+    }
+
+    .top-title {
+        font-size: 44px;
+        font-weight: 900;
+        padding-left: 16px;
+    }
+
+    .product-blocks {
+        gap: 16px;
+        margin-top: 73px;
+        margin-bottom: 32px;
+
+    }
+
+    .product-text {
+        padding: 25px 28.8px 20px 16.6px;
+    }
+
+    .button-browse {
+        margin-bottom: 64px;
+    }
+
+    .of-lux, .fash {
+        font-size: 24px;
+    }
+
+    .about-advantages {
+        flex-direction: column;
+        padding: 48px 0 64px;
+        gap: 48px;
+        justify-content: center;
+    }
+
+    .adv {
+        padding: 0;
+    }
+
+    .subscribe {
+        min-height: 600px;
+        background-position-x: 25%;
+    }
+
+    .subscribe__box {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .subscribe__left {
+        margin-top: 64px;
+        max-width: 360px;
+    }
+
+    .subscribe__right {
+        margin-right: 0;
+        margin-bottom: 140px;
+    }
+
+    .subscribe__title {
+        line-height: 162%;
+        margin-bottom: 27px;
+
+        &_top {
+            line-height: 162%;
+        }
+    }
+
+    .subscribe__text {
+        margin-bottom: 60px;
+    }
+
+    .header__left {
+        padding-left: 16px;
+    }
+
+    .header__right {
+        padding-right: 16px;
     }
 }

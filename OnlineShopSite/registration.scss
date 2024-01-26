@@ -1,13 +1,5 @@
 @import 'vars';
-
-$justify-content: center;
-$colorStyleSite: #F16D7F;
-
-@mixin flex($justify-content) {
-    display: flex;
-    align-items: center;
-    justify-content: $justify-content;
-}
+@import 'mixins';
 
 * {
     margin: 0;

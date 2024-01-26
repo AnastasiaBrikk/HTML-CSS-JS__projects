@@ -48,7 +48,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   position: relative;
 }
 .header__left {
@@ -81,7 +80,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   border-radius: 50%;
   top: -5px;
   left: 19px;
@@ -151,7 +149,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .top-head__heading {
@@ -337,7 +334,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 48px;
 }
@@ -458,7 +454,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   flex-direction: column;
   padding: 104px 0;
 }
@@ -509,7 +504,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   flex-direction: column;
   margin-top: 97px;
 }
@@ -589,7 +583,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
 }
 .footer__text {
@@ -611,7 +604,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .footer__icon:hover {
   background-color: #F16D7F;
