@@ -1,0 +1,2 @@
+The game is only in **HTML5 CSS3**. 
+An animated GIF randomly flies across the screen. The player's task is to click on the GIF. After clicking, the item disappears, and the click counter indicates the number of items caught. Total 6 gifs. After the animation is completed it is possible to repeat the game through a button that reloads the html file.
