@@ -1,0 +1,214 @@
+@keyframes fly-1 {
+  0% {
+    left: -100px;
+    top: 48vh;
+  }
+  25% {
+    left: 4vw;
+    top: 68vh;
+  }
+  50% {
+    left: 50vw;
+    top: 61vh;
+  }
+  75% {
+    left: 75vw;
+    top: 4vh;
+  }
+  100% {
+    left: 100vw;
+    top: 9vh;
+  }
+}
+@keyframes fly-2 {
+  0% {
+    left: -100px;
+    top: 34vh;
+  }
+  25% {
+    left: 10vw;
+    top: 2vh;
+  }
+  50% {
+    left: 50vw;
+    top: 1vh;
+  }
+  75% {
+    left: 75vw;
+    top: 57vh;
+  }
+  100% {
+    left: 100vw;
+    top: 14vh;
+  }
+}
+@keyframes fly-3 {
+  0% {
+    left: -100px;
+    top: 37vh;
+  }
+  25% {
+    left: 15vw;
+    top: 52vh;
+  }
+  50% {
+    left: 50vw;
+    top: 78vh;
+  }
+  75% {
+    left: 75vw;
+    top: 42vh;
+  }
+  100% {
+    left: 100vw;
+    top: 83vh;
+  }
+}
+@keyframes fly-4 {
+  0% {
+    left: -100px;
+    top: 39vh;
+  }
+  25% {
+    left: 12vw;
+    top: 78vh;
+  }
+  50% {
+    left: 50vw;
+    top: 69vh;
+  }
+  75% {
+    left: 75vw;
+    top: 7vh;
+  }
+  100% {
+    left: 100vw;
+    top: 66vh;
+  }
+}
+@keyframes fly-5 {
+  0% {
+    left: -100px;
+    top: 85vh;
+  }
+  25% {
+    left: 5vw;
+    top: 1vh;
+  }
+  50% {
+    left: 50vw;
+    top: 39vh;
+  }
+  75% {
+    left: 75vw;
+    top: 64vh;
+  }
+  100% {
+    left: 100vw;
+    top: 74vh;
+  }
+}
+@keyframes fly-6 {
+  0% {
+    left: -100px;
+    top: 18vh;
+  }
+  25% {
+    left: 16vw;
+    top: 63vh;
+  }
+  50% {
+    left: 50vw;
+    top: 71vh;
+  }
+  75% {
+    left: 75vw;
+    top: 72vh;
+  }
+  100% {
+    left: 100vw;
+    top: 14vh;
+  }
+}
+.body {
+  overflow: hidden;
+  counter-reset: count;
+  height: 100vh;
+  margin: 0;
+  background-image: url(bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.item {
+  position: absolute;
+}
+.item__gif {
+  width: 100px;
+  cursor: pointer;
+}
+.item_1 {
+  animation: fly-1 7s ease-in 1s both;
+}
+.item_2 {
+  animation: fly-2 6s ease-in 4s both;
+}
+.item_3 {
+  animation: fly-3 7s ease-in 6s both;
+}
+.item_4 {
+  animation: fly-4 9s ease-in 8s both;
+}
+.item_5 {
+  animation: fly-5 8s ease-in 10s both;
+}
+.item_6 {
+  animation: fly-6 6s ease-in 12s both;
+}
+
+.repeat {
+  font-family: Verdana, sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: larger;
+  color: black;
+  position: absolute;
+  bottom: 20px;
+  left: 45vw;
+  padding: 10px 20px;
+  border: 4px solid black;
+  background-color: rgb(204, 213, 234);
+  border-radius: 10px;
+  display: inline-block;
+}
+.repeat:active {
+  border: 5px solid black;
+}
+
+.check {
+  position: absolute;
+  visibility: hidden;
+  left: -99999;
+}
+.check:checked {
+  counter-increment: count;
+}
+.check:checked ~ label {
+  display: none;
+}
+
+.counter-info {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 20%;
+  background-color: rgb(217, 229, 250);
+}
+.counter-info::before {
+  content: counter(count);
+}
