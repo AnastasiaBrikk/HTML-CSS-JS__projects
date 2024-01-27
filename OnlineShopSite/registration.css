@@ -20,6 +20,10 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.padding {
+  padding: 0 16px;
+}
+
 .center {
   padding-left: calc(50% - 570px);
   padding-right: calc(50% - 570px);
@@ -50,13 +54,11 @@ a {
   display: flex;
   align-items: center;
   gap: 35px;
-  padding-left: 6px;
 }
 .header__right {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  padding-right: 6px;
 }
 .header__cart {
   position: relative;
@@ -137,6 +139,9 @@ a {
 }
 .nav__ul a:hover {
   color: #F16D7F;
+}
+.nav__icons {
+  display: none;
 }
 
 .top-head {
@@ -461,5 +466,146 @@ a {
   }
   .footer__nav {
     padding-right: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .center {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .header__right {
+    display: inline-block;
+    padding-right: 8px;
+  }
+  .header__left {
+    gap: 41px;
+    padding-left: 8px;
+  }
+  .header .registr,
+  .header .cart {
+    display: none;
+  }
+  .nav {
+    top: 77.9px;
+    padding-top: 20px;
+    width: 100vw;
+    right: -768px;
+  }
+  .nav__head {
+    padding-top: 20px;
+  }
+  .nav__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  .nav__icon path {
+    fill: #222;
+  }
+  .top-head {
+    justify-content: center;
+  }
+  .registration {
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .registration__regist {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .registration__title, .registration__sex, .registration__bottom-text {
+    font-weight: 400;
+  }
+  .registration__radioform {
+    padding-bottom: 34.8px;
+  }
+  .registration__button {
+    padding-right: 29px;
+  }
+  .registration__loyalty {
+    width: 100%;
+    margin-bottom: 83px;
+  }
+  .registration__head {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+  .registration__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+  .registration__li {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  #female, #male {
+    width: 17px;
+    height: 17px;
+  }
+  .subscribe {
+    height: 550px;
+    background-position-x: 24%;
+  }
+  .subscribe__box {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .subscribe__text {
+    font-size: 18px;
+    margin-bottom: 59px;
+  }
+  .subscribe__left {
+    margin-top: 64px;
+  }
+  .subscribe__right {
+    margin-right: 0;
+    min-width: 278px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: center;
+  }
+  .subscribe__left img {
+    width: 92px;
+  }
+  .subscribe__title {
+    font-size: 14px;
+    line-height: 153.2%;
+    max-width: 272px;
+    margin-bottom: 0;
+  }
+  .subscribe__title_top {
+    text-align: center;
+  }
+  .subscribe #user-email {
+    padding: 6px 0 6px 21px;
+    height: 47px;
+    max-width: 245px;
+    width: 65.333vw;
+  }
+  .subscribe .button-sub {
+    height: 47px;
+    max-width: 95px;
+    width: 25.333vw;
+  }
+  .footer {
+    display: block;
+    height: 143px;
+  }
+  .footer__box {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 25px;
+    padding: 43px 0 24px;
   }
 }/*# sourceMappingURL=registration.css.map */

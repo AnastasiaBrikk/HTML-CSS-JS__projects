@@ -23,6 +23,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.padding {
+    padding: 0 16px;
+}
+
 .center {
     padding-left: calc(50% - $widthSite / 2);
     padding-right: calc(50% - $widthSite / 2);
@@ -51,14 +55,12 @@ a {
         display: flex;
         align-items: center;
         gap: 35px;
-        padding-left: 6px;
     }
 
     &__right {
         display: flex;
         align-items: center;
         gap: 2.5rem;
-        padding-right: 6px;
     }
 
     &__cart {
@@ -146,6 +148,9 @@ a {
         color: $colorSelectSite;
     }
 
+    &__icons {
+        display: none;
+    }
 }
 
 .top-head {
@@ -233,7 +238,7 @@ a {
         padding-left: 29px;
         padding-right: 20px;
         gap: 20px;
-        background-color: $colorStyleSite;
+        background-color: $colorSelectSite;
         border: none;
         cursor: pointer;
 
@@ -379,7 +384,7 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background-color: $colorStyleSite;
+    background-color: $colorSelectSite;
     border-radius: 0 25px 25px 0;
     border: none;
     cursor: pointer;
@@ -521,5 +526,175 @@ a {
 
     .footer__nav {
         padding-right: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .center {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+
+        &__right {
+            display: inline-block;
+            padding-right: 8px;
+        }
+
+        &__left {
+            gap: 41px;
+            padding-left: 8px;
+        }
+
+        .registr,
+        .cart {
+            display: none;
+        }
+    }
+
+    .nav {
+        top: 77.9px;
+        padding-top: 20px;
+        width: 100vw;
+        right: -768px;
+
+        &__head {
+            padding-top: 20px;
+        }
+
+        &__icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        &__icon path {
+            fill: #222;
+        }
+    }
+
+    .top-head {
+        justify-content: center;
+    }
+
+    .registration {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        &__regist {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        &__title, &__sex, &__bottom-text {
+            font-weight: 400;
+        }
+
+        &__radioform {
+            padding-bottom: 34.8px;
+        }
+
+        &__button {
+            padding-right: 29px;
+        }
+
+        &__loyalty {
+            width: 100%;
+            margin-bottom: 83px;
+        }
+
+        &__head {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        &__text {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 22px;
+        }
+
+        &__li {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+    #female, #male {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .subscribe {
+        height: 550px;
+        background-position-x: 24%;
+        &__box {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__text {
+            font-size: 18px;
+            margin-bottom: 59px;
+        }
+
+        &__left {
+            margin-top: 64px;
+        }
+
+        &__right {
+            margin-right: 0;
+            min-width: 278px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 22px;
+            justify-content: center;
+        }
+
+        &__left img {
+            width: 92px;
+        }
+
+        &__title {
+            font-size: 14px;
+            line-height: 153.2%;
+            max-width: 272px;
+            margin-bottom: 0;
+
+            &_top {
+                text-align: center;
+            }
+        }
+
+        #user-email {
+            padding: 6px 0 6px 21px;
+            height: 47px;
+            max-width: 245px;
+            width: 65.333vw;
+        }
+
+        .button-sub {
+            height: 47px;
+            max-width: 95px;
+            width: 25.333vw;
+        }
+    }
+    .footer {
+        display: block;
+        height: 143px;
+    }
+    .footer__box {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 25px;
+        padding: 43px 0 24px;
     }
 }
