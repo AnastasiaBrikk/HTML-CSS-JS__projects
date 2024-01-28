@@ -163,7 +163,7 @@ a {
     align-items: center;
 
     &__heading {
-        color: #F16D7F;
+        color: $colorSelectSite;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -444,7 +444,6 @@ input[type="number"]::-webkit-inner-spin-button {
         flex-direction: column;
         margin-top: 97px;
     }
-
 
     &__text {
         color: #222224;
